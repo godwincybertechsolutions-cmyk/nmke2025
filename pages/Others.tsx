@@ -1,7 +1,7 @@
 import React from 'react';
-import { Coffee, Heart, ArrowRight, ShoppingBag, Droplets, Camera, BookOpen } from 'lucide-react';
+import { Coffee, Heart, ArrowRight, ShoppingBag, Droplets, BookOpen } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
-import { COFFEE_PRODUCTS, CSR_PROJECTS, BLOG_POSTS, GALLERY_IMAGES } from '../constants';
+import { COFFEE_PRODUCTS, CSR_PROJECTS, BLOG_POSTS } from '../constants';
 
 const Others: React.FC = () => {
   return (
@@ -101,13 +101,12 @@ const Others: React.FC = () => {
         </div>
       </section>
 
-      {/* Blog & Gallery Split */}
+      {/* Journal Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
-            
-            {/* Blog Section (2/3 width) */}
-            <div className="lg:col-span-2">
+          <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
+            {/* Blog Section */}
+            <div>
               <div className="flex items-center gap-3 mb-10">
                 <BookOpen className="text-primary" />
                 <h2 className="font-serif text-3xl text-dark">The Journal</h2>
@@ -131,27 +130,6 @@ const Others: React.FC = () => {
                 ))}
               </div>
             </div>
-
-            {/* Gallery Sidebar (1/3 width) */}
-            <div>
-              <div className="flex items-center gap-3 mb-10">
-                <Camera className="text-primary" />
-                <h2 className="font-serif text-3xl text-dark">Gallery</h2>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-3">
-                {GALLERY_IMAGES.map((img, index) => (
-                  <div key={index} className={`rounded-lg overflow-hidden relative group cursor-pointer ${index === 0 ? 'col-span-2 aspect-video' : 'aspect-square'}`}>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors z-10"></div>
-                    <img src={img} alt="Gallery" className="w-full h-full object-cover" />
-                  </div>
-                ))}
-              </div>
-              <button className="w-full mt-6 py-3 border border-dark text-dark hover:bg-dark hover:text-white transition-colors rounded text-sm font-medium uppercase tracking-widest">
-                View Full Gallery
-              </button>
-            </div>
-
           </div>
         </div>
       </section>

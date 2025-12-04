@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src="assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
+              <img src="/assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
               <span className="font-serif text-2xl font-bold">{APP_NAME}</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -32,7 +32,6 @@ const Footer: React.FC = () => {
               <li><a href="#" className="hover:text-white transition-colors">Safari Experiences</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Urban Living</a></li>
               <li><a href="#" className="hover:text-white transition-colors">Our Story</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Gallery</a></li>
             </ul>
           </div>
 

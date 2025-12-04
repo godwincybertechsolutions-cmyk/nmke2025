@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src="assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="eager" decoding="sync" />
+          <img src="/assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="eager" decoding="sync" />
           <span className="hidden sm:block font-serif text-xl font-semibold text-dark tracking-wide">{APP_NAME}</span>
         </Link>
 

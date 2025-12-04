@@ -49,9 +49,12 @@ const Safaris: React.FC = () => {
                   {/* Image Section */}
                   <div className="w-full md:w-2/5 h-64 md:h-auto relative">
                      <img 
-                        src={itinerary.image} 
+                        src={itinerary.image}
                         alt={itinerary.title}
-                        className="w-full h-full object-cover" 
+                        loading="eager"
+                        decoding="async"
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).src = 'https://picsum.photos/seed/safari/1200/675'; }}
+                        className="w-full h-full object-cover"
                       />
                       <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-4 py-2 rounded-full flex items-center gap-2 shadow-sm">
                         <Clock size={14} className="text-primary" />

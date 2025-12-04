@@ -88,7 +88,7 @@ const Home: React.FC = () => {
                 />
                 <div className="absolute bottom-0 left-0 p-8 z-20 text-white">
                   <Mountain className="mb-4 text-primary" size={32} />
-                  <h3 className="font-serif text-3xl mb-2">Kirinyaga Haven</h3>
+                  <h3 className="font-serif text-3xl mb-2">Mt. Kenya Haven</h3>
                   <p className="text-white/80 text-sm opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4 group-hover:translate-y-0 duration-300">
                     Tranquil villas nestled in the misty slopes of Mt. Kenya.
                   </p>
