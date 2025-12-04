@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Mountain } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { NAVIGATION_LINKS, APP_NAME } from '../constants';
 
 const Navbar: React.FC = () => {
@@ -23,15 +23,16 @@ const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-4' : 'bg-transparent py-6'
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white/80 backdrop-blur-sm py-4'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-<Link to="/" className="flex items-center group"> 
-  <img src="https://previews.dropbox.com/p/thumb/AC0gIHz5OkQtfL1xlA2zYv2jgSid9OnVl15xdhQ6QPzLV5UwF7uwq3i7DlAC24zbXHoqKpMZy7JX79Lx21ZZJYGkqnSBxjrYUGxctdW50mVPEQlRIiwrOYYkHZPQyRBeRzfHnSW5S21CC8TrG2KMK30il1uxVMnAU_gpH4rPz83MbYLOVyB15arlV1B3VDNZ8CkxdEBbuQKtzjggxJZRVMFXLqA56sDLUWMJimNSr8rLWsUYRsVpCHJh3MYsesBInTuwtLdEbWhWi1Noz_i5z7xjnJyb6EEH8vlsoVlPwfwjGoHDzVeAdwFSpEluBnn1I7n3q4kxJm3ulrtsPnqSZw-l/p.png" alt={APP_NAME} className={`h-10 ${scrolled ? '' : 'filter brightness-0 invert'}`} />
-</Link>
+        <Link to="/" className="flex items-center gap-3">
+          <img src="assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="eager" decoding="sync" />
+          <span className="hidden sm:block font-serif text-xl font-semibold text-dark tracking-wide">{APP_NAME}</span>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
@@ -40,7 +41,7 @@ const Navbar: React.FC = () => {
               key={link.name}
               to={link.path}
               className={`text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors ${
-                scrolled ? 'text-dark' : 'text-white drop-shadow-sm'
+                'text-dark'
               } ${location.pathname === link.path ? 'text-primary' : ''}`}
             >
               {link.name}
@@ -56,7 +57,7 @@ const Navbar: React.FC = () => {
           className="md:hidden text-primary"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} color={scrolled ? '#2F2F2F' : '#FFFFFF'} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 

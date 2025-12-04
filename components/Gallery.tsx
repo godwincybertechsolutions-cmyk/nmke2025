@@ -16,6 +16,23 @@ const Gallery: React.FC<GalleryProps> = ({ images, altBase = 'Gallery image', cl
   const deltaX = useRef<number>(0);
   const imgs = images && images.length > 0 ? images : FALLBACK;
 
+  // Preload next/previous images for instant slide switch
+  useEffect(() => {
+    if (!imgs || imgs.length <= 1) return;
+    const preload = (src: string) => {
+      const img = new Image();
+      img.decoding = 'async';
+      // hint to browsers that these are less critical than current
+      // @ts-ignore
+      img.fetchPriority = 'low';
+      img.src = src;
+    };
+    const next = (index + 1) % imgs.length;
+    const prev = (index - 1 + imgs.length) % imgs.length;
+    preload(imgs[next]);
+    preload(imgs[prev]);
+  }, [index, imgs]);
+
   
   const go = (dir: number) => {
     setIndex((prev) => {
@@ -78,7 +95,13 @@ const Gallery: React.FC<GalleryProps> = ({ images, altBase = 'Gallery image', cl
               key={i}
               src={src}
               alt={`${altBase} ${i + 1}`}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${i === index ? 'opacity-100' : 'opacity-0'}`}
+              loading={i === index ? 'eager' : 'lazy'}
+              decoding="async"
+              // @ts-ignore React 18 supports fetchPriority
+              fetchPriority={i === index ? 'high' : 'low'}
+              sizes="(min-width: 768px) 768px, 100vw"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK[0]; }}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 will-change-[opacity] ${i === index ? 'opacity-100' : 'opacity-0'}`}
             />
           ))}
           <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
@@ -123,7 +146,14 @@ const Gallery: React.FC<GalleryProps> = ({ images, altBase = 'Gallery image', cl
               className={`relative w-20 h-16 rounded-md overflow-hidden border ring-1 ${i === index ? 'border-primary ring-primary' : 'border-transparent ring-transparent'} hover:scale-105 transition-transform`}
               aria-label={`Select slide ${i + 1}`}
             >
-              <img src={src} alt={`${altBase} thumbnail ${i + 1}`} className="w-full h-full object-cover" />
+              <img
+                src={src}
+                alt={`${altBase} thumbnail ${i + 1}`}
+                loading="lazy"
+                decoding="async"
+                onError={(e) => { (e.currentTarget as HTMLImageElement).src = FALLBACK[0]; }}
+                className="w-full h-full object-cover"
+              />
             </button>
           ))}
         </div>

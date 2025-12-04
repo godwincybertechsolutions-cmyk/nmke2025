@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mountain, Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { APP_NAME } from '../constants';
 
 const Footer: React.FC = () => {
@@ -10,8 +10,8 @@ const Footer: React.FC = () => {
           
           {/* Brand */}
           <div className="space-y-6">
-            <div className="flex items-center gap-2">
-              <Mountain size={32} className="text-primary" />
+            <div className="flex items-center gap-3">
+              <img src="assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
               <span className="font-serif text-2xl font-bold">{APP_NAME}</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
