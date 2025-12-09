@@ -2,16 +2,18 @@ import React from 'react';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { APP_NAME } from '../constants';
 
+import logo from '../assets/nmke2.png';
+
 const Footer: React.FC = () => {
   return (
     <footer className="bg-dark text-white pt-20 pb-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-gray-700 pb-12">
-          
+
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src="/assets/nmke2.png" alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
+              <img src={logo} alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
               <span className="font-serif text-2xl font-bold">{APP_NAME}</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -41,7 +43,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-sm text-gray-400">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>123 Wildlife Drive,<br/>Narumoru, Kenya</span>
+                <span>123 Wildlife Drive,<br />Narumoru, Kenya</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} />
@@ -59,9 +61,9 @@ const Footer: React.FC = () => {
             <h4 className="font-serif text-lg mb-6 text-primary">Newsletter</h4>
             <p className="text-gray-400 text-sm mb-4">Subscribe for exclusive offers and safari tales.</p>
             <form className="flex flex-col gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email address" 
+              <input
+                type="email"
+                placeholder="Your email address"
                 className="bg-gray-800 border border-gray-700 text-white px-4 py-3 rounded focus:outline-none focus:border-primary transition-colors text-sm"
               />
               <button className="bg-primary hover:bg-[#c4492e] text-white py-3 rounded text-sm font-medium tracking-wide transition-colors uppercase">
