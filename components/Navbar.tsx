@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { NAVIGATION_LINKS, APP_NAME } from '../constants';
-
-import logo from '../assets/nmke2.png';
+import logo from '../src/assets/nmke2.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,10 +23,9 @@ const Navbar: React.FC = () => {
   }, [location]);
 
   return (
-    <nav 
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white/80 backdrop-blur-sm py-4'
-      }`}
+    <nav
+      className={`sticky top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg py-3' : 'bg-white/80 backdrop-blur-sm py-4'
+        }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
@@ -42,9 +40,8 @@ const Navbar: React.FC = () => {
             <Link
               key={link.name}
               to={link.path}
-              className={`text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors ${
-                'text-dark'
-              } ${location.pathname === link.path ? 'text-primary' : ''}`}
+              className={`text-sm font-medium tracking-widest uppercase hover:text-primary transition-colors ${'text-dark'
+                } ${location.pathname === link.path ? 'text-primary' : ''}`}
             >
               {link.name}
             </Link>
@@ -55,7 +52,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-primary"
           onClick={() => setIsOpen(!isOpen)}
         >

@@ -1,8 +1,7 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { APP_NAME } from '../constants';
-
-import logo from '../assets/nmke2.png';
+import logo from '../src/assets/nmke2.png';
 
 const Footer: React.FC = () => {
   return (
