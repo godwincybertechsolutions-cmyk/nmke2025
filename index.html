@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>New Manyatta Kenya | Luxury Hospitality</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: '#DD5536', // Terracotta Orange
-              dark: '#2F2F2F',    // Charcoal Black
-              light: '#F9FAFB',
-            },
-            fontFamily: {
-              serif: ['"Cormorant Garamond"', 'serif'],
-              sans: ['"Inter"', 'sans-serif'],
-            }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>New Manyatta Kenya</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#DD5536', // Terracotta Orange
+            dark: '#2F2F2F',    // Charcoal Black
+            light: '#F9FAFB',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Inter"', 'sans-serif'],
           }
         }
       }
-    </script>
-    <style>
-      /* Custom scrollbar for luxury feel */
-      ::-webkit-scrollbar {
-        width: 8px;
+    }
+  </script>
+  <style>
+    /* Custom scrollbar for luxury feel */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #DD5536;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b94226;
+    }
+
+    /* Modal fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1; 
+
+      to {
+        opacity: 1;
       }
-      ::-webkit-scrollbar-thumb {
-        background: #DD5536; 
-        border-radius: 4px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: #b94226; 
-      }
-    </style>
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.2s ease-out;
+    }
+  </style>
   <script type="importmap">
 {
   "imports": {
@@ -57,7 +78,8 @@
   }
 }
 </script>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
   </body>
+
 </html>

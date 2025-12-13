@@ -1,7 +1,6 @@
 import React from 'react';
 import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
-import { APP_NAME } from '../constants';
-import logo from '../src/assets/nmke2.png';
+import { APP_NAME, LOGO_URL } from '../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <img src={logo} alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
+              <img src={LOGO_URL} alt={APP_NAME} className="h-10 w-auto" loading="lazy" decoding="async" />
               <span className="font-serif text-2xl font-bold">{APP_NAME}</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">

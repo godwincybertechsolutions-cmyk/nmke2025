@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import { NAVIGATION_LINKS, APP_NAME } from '../constants';
-import logo from '../src/assets/nmke2.png';
+import { NAVIGATION_LINKS, APP_NAME, LOGO_URL } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,7 +29,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt={APP_NAME} className="h-10 w-auto" loading="eager" decoding="sync" />
+          <img src={LOGO_URL} alt={APP_NAME} className="h-10 w-auto" loading="eager" decoding="sync" />
           <span className="hidden sm:block font-serif text-xl font-semibold text-dark tracking-wide">{APP_NAME}</span>
         </Link>
 
